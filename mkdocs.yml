@@ -1,0 +1,136 @@
+---
+# Site
+site_name: 廖思睿的个人博客
+# site_url: https://blog.liaosirui.com
+site_url: http://10.244.244.21:8000/
+site_author: "Cyril Liao"
+site_description: >-
+  This mkdocs theme is based on mkdocs-material and aims to provide a
+  consistent look and feel for any project related to Ansible.
+
+# Repository
+repo_name: ansible/mkdocs-ansible
+repo_url: https://github.com/LiaoSirui/blog.liaosirui.com
+edit_uri: blob/main/
+
+# Copyright
+copyright: >-
+  <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702043024">川公网安备51010702043024号</a> | 
+  <a href="http://beian.miit.gov.cn">蜀ICP备17003301号-1</a>
+
+# Navigation
+# nav: 
+#   - 首页: "/docs/README.md"
+#   - 计算机科学: "/计算机科学"
+
+# Configuration
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
+  language: zh
+  icon:
+    repo: fontawesome/brands/github-alt
+    logo: material/library-outline
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - search.share
+    - search.suggest
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Customization
+extra:
+  # generator: false
+  social:
+    - icon: fontawesome/solid/house
+      link: http://www.liaosirui.com/
+    - icon: fontawesome/brands/github
+      link: https://github.com/LiaoSirui
+
+# Validation
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+# Plugins
+plugins:
+  - minify:
+      minify_html: true
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])' # 分隔符
+  # - privacy
+
+exclude_docs: |
+  !.assets
+  !.icons
