@@ -1,12 +1,10 @@
 ---
 # Site
 site_name: 廖思睿的个人博客
-# site_url: https://blog.liaosirui.com
-site_url: http://10.244.244.21:8000/
+site_url: https://blog.liaosirui.com
 site_author: "Cyril Liao"
 site_description: >-
-  This mkdocs theme is based on mkdocs-material and aims to provide a
-  consistent look and feel for any project related to Ansible.
+  一个热爱计算机科学、数学、量化的工程师，记录生活、分享知识、交流经验。
 
 # Repository
 repo_name: ansible/mkdocs-ansible
@@ -17,11 +15,6 @@ edit_uri: blob/main/
 copyright: >-
   <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702043024">川公网安备51010702043024号</a> | 
   <a href="http://beian.miit.gov.cn">蜀ICP备17003301号-1</a>
-
-# Navigation
-# nav: 
-#   - 首页: "/docs/README.md"
-#   - 计算机科学: "/计算机科学"
 
 # Configuration
 theme:
@@ -130,6 +123,12 @@ plugins:
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])' # 分隔符
   # - privacy
+  - mkdocs-nav-weight:
+      section_renamed: false
+      index_weight: -10
+      warning: true
+      reverse: false
+      headless_included: false
 
 exclude_docs: |
   !.assets

@@ -1,6 +1,7 @@
 services:
   mkdocs:
-    image: harbor.alpha-quant.com.cn:5000/3rd_party/docker.io/squidfunk/mkdocs-material:9.5.33
+    image: docker.io/squidfunk/mkdocs-material:9.5.33
+    # image: harbor.alpha-quant.com.cn:5000/3rd_party/docker.io/squidfunk/mkdocs-material:9.5.33
     network_mode: "host"
     # ports:
     #   - "8005:8000"
@@ -12,7 +13,19 @@ services:
     stdin_open: true
     tty: true
     working_dir: /
-    entrypoint: ["/usr/local/bin/mkdocs"]
-    # command: ["serve", "--dev-addr=0.0.0.0:8000", "--no-livereload"]
-    command: ["build"]
+    entrypoint: ["/bin/sh"]
+    command:
+      - -c
+      - |
+        pip3 install \
+        -i http://mirrors.aliyun.com/pypi/simple/ \
+        --trusted-host=mirrors.aliyun.com \
+        mkdocs-nav-weight \
+        && /usr/local/bin/mkdocs build
+        # && /usr/local/bin/mkdocs serve --dev-addr=0.0.0.0:8000 --no-livereload
     init: true
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '1'
+    #       memory: 2000M
