@@ -7,3 +7,7 @@ rebuild:
 .PHONY: resync
 resync:
 	rsync -av --delete site/ jd:/root/sites/blog.liaosirui.com/
+
+.PHONY: recopy
+recopy:
+	rsync -av --delete site/ /root/sites/blog.liaosirui.com/
