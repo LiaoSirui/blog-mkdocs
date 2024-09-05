@@ -19,6 +19,7 @@
         "linenums",
         "magiclink",
         "mkdocs",
+        "pagetree",
         "pygments",
         "pymdownx",
         "Roboto",

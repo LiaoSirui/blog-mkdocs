@@ -20,7 +20,7 @@ services:
         pip3 install \
         -i http://mirrors.aliyun.com/pypi/simple/ \
         --trusted-host=mirrors.aliyun.com \
-        mkdocs-nav-weight \
+        mkdocs-nav-weight mkdocs-pagetree-plugin \
         && /usr/local/bin/mkdocs build
         # && /usr/local/bin/mkdocs serve --dev-addr=0.0.0.0:8000 --no-livereload
     init: true
