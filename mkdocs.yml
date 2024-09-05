@@ -139,3 +139,5 @@ plugins:
 exclude_docs: |
   !.assets
   !.icons
+
+use_directory_urls: false
