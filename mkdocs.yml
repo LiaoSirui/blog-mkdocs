@@ -135,6 +135,7 @@ plugins:
       reverse: false
       headless_included: false
   - pagetree
+  - mermaid2
 
 exclude_docs: |
   !.assets
